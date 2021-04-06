@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Pixelart using Javascript</title>
+      <script src="javascript.js"></script>
+    </head>
+    <body>
+      <h3>(x ^ y % MOD)</h3>
+      <p>This uses the Exponent function and the modulo to generate the pattern. Just add the module value and trigger the button to play with this type of functions.</p>
+      <canvas id="ExpCanvas" width="800" height="600"></canvas>
+      (x ^ y) % <input id="ExpInput" type="text" value="5" />
+      <button onclick="generateExp()">generate</button>
+      <p>Try following modulo values:</p>
+      <ul class="simple">
+         <li>5</li>
+         <li>9</li>
+         <li>17</li>
+         <li>33</li>
+      </ul>
+
+      <h3>(x | y % MOD)</h3>
+      <p>This function use the binary OR operator. The resulting images have rectangle triangles.</p>
+      <canvas id="OrCanvas" width="800" height="600"></canvas>
+      (x | y) % <input id="OrInput" type="text" value="9" />
+      <button onclick="generateOr()">generate</button>
+      <p>Following values are worth to try out:</p>
+      <ul class="simple">
+         <li>7</li>
+         <li>17</li>
+         <li>29</li>
+      </ul>
+    
+     <h3>Functions</h3>
+     <p>With this, you can pass any function and eval will try to extract 0/1 out of it. This required valid javascript syntax and is really slow compared to the solutions provided.</p>
+     <canvas id="AnyCanvas" width="800" height="600"></canvas>
+     <input id="AnyInput" type="text" value="(x * y) & 47" />
+     <br /><button onclick="generateAny()">generate</button>
+     <p>Try out:</p>
+     <ul class="simple">
+        <li>(x * y) &amp; 47</li>
+        <li>(x * 31) % y</li>
+        <li>((x-128) * 64) % (y-128)</li>
+     </ul>
+
+    <h2>Blogpost</h2>
+    <a href="https://www.murawski.blog/pixelart.html">https://www.murawski.blog/pixelart.html</a>
+    <script>
+       document.addEventListener("DOMContentLoaded", function(event) {
+       generateOr();
+       generateExp();
+       generateAny();
+       });
+    </script>
+    </body>
+</html>
